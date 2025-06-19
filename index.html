@@ -14,6 +14,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -41,60 +42,146 @@
   </div>
 </section>
 
+<section id="projects" class="section">
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-card">
+      <h3>AFRICA ELEVATE</h3>
+      <p>A youth-led EdTech platform connecting underrepresented communities to innovation, education, and opportunity.</p>
+      <a href="#" target="_blank">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <h3>MentorHer Africa</h3>
+      <p>A mentorship program helping women break into cybersecurity — 90% of participants landed jobs in tech.</p>
+      <a href="https://mentorherafrica.com/about-us" target="_blank">Visit Site</a>
+    </div>
+  </div>
+</section>
+
 
     <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="job">
-        <h3>Conference Coordinator – ChampionHer Cybersecurity Conference</h3>
-        <p><em>Feb 2024 – Oct 2024, Kigali</em></p>
-        <ul>
-          <li>Led planning and logistics for an international conference with 500+ attendees.</li>
-          <li>Promoted inclusion in cybersecurity with diverse speaker lineups and workshops.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>Program Coordinator – Africa Quantitative Sciences Ltd</h3>
-        <p><em>Aug 2023 – Aug 2024</em></p>
-        <ul>
-          <li>Founded <strong>MentorHer Africa</strong>, achieving 90% placement in cybersecurity roles.</li>
-          <li>Organized training, mentorships, and community events for women in tech.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h3>Software Developer Intern – IHWA Design Ltd</h3>
-        <p><em>Dec 2022 – Aug 2023</em></p>
-        <ul>
-          <li>Built dynamic websites using HTML, CSS, JavaScript, Node.js, and Python.</li>
-        </ul>
-      </div>
+        <h2>Experience</h2>
+        <div class="experience-slideshow">
+            <div class="slide active">
+                <h3>Conference Coordinator – ChampionHer Cybersecurity Conference</h3>
+                <p><em>Feb 2024 – Oct 2024, Kigali</em></p>
+                <ul>
+                    <li>Led planning and logistics for an international conference with 500+ attendees.</li>
+                    <li>Promoted inclusion in cybersecurity with diverse speaker lineups and workshops.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h3>Program Coordinator – Africa Quantitative Sciences Ltd</h3>
+                <p><em>Aug 2023 – Aug 2024</em></p>
+                <ul>
+                    <li>Founded <strong>MentorHer Africa</strong>, achieving 90% placement in cybersecurity roles.</li>
+                    <li>Organized training, mentorships, and community events for women in tech.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h3>Software Developer Intern – IHWA Design Ltd</h3>
+                <p><em>Dec 2022 – Aug 2023</em></p>
+                <ul>
+                    <li>Built dynamic websites using HTML, CSS, JavaScript, Node.js, and Python.</li>
+                </ul>
+            </div>
+            <button class="slide-btn prev" aria-label="Previous Experience">&#10094;</button>
+            <button class="slide-btn next" aria-label="Next Experience">&#10095;</button>
+        </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML, CSS, JavaScript, Python, Node.js</li>
-        <li>WordPress, Web Design</li>
-        <li>Project Management, Strategic Planning</li>
-        <li>Languages: Kinyarwanda (Native), English (Fluent), French (Fluent)</li>
-      </ul>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.experience-slideshow .slide');
+        const prevBtn = document.querySelector('.experience-slideshow .slide-btn.prev');
+        const nextBtn = document.querySelector('.experience-slideshow .slide-btn.next');
+        let current = 0;
+
+        function showSlide(idx) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === idx);
+            });
+        }
+
+        prevBtn.addEventListener('click', function() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        });
+
+        nextBtn.addEventListener('click', function() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        });
+
+        // Optional: swipe support for mobile
+        let startX = null;
+        const container = document.querySelector('.experience-slideshow');
+        container.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        });
+        container.addEventListener('touchend', function(e) {
+            if (startX === null) return;
+            let endX = e.changedTouches[0].clientX;
+            if (endX - startX > 50) prevBtn.click();
+            else if (startX - endX > 50) nextBtn.click();
+            startX = null;
+        });
+    });
+    </script>
+
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li><strong>Python:</strong> Data analysis, automation, web development (Flask, Django)</li>
+                    <li><strong>JavaScript:</strong> Interactive web applications, ES6+, DOM manipulation</li>
+                    <li><strong>HTML &amp; CSS:</strong> Semantic markup, responsive design, accessibility</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Frameworks &amp; Tools</h3>
+                <ul>
+                    <li><strong>Node.js:</strong> Backend development, REST APIs</li>
+                    <li><strong>WordPress:</strong> Custom themes, content management</li>
+                    <li><strong>Git &amp; GitHub:</strong> Version control, collaboration</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Soft Skills</h3>
+                <ul>
+                    <li><strong>Leadership:</strong> Team coordination, project management, mentoring</li>
+                    <li><strong>Communication:</strong> Public speaking, technical writing, cross-functional collaboration</li>
+                    <li><strong>Problem Solving:</strong> Analytical thinking, creative solutions</li>
+                </ul>
+            </div>
+            <div class="skill-item">
+                <h3>Other Skills</h3>
+                <ul>
+                    <li><strong>Cybersecurity Awareness:</strong> Promoting safe practices, organizing workshops</li>
+                    <li><strong>Event Planning:</strong> Conference logistics, community engagement</li>
+                    <li><strong>Mentorship:</strong> Empowering women in tech, career guidance</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form id="contactForm" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
     </section>
-  </main>
+    </main>
 
-  <footer>
-    <p>Connect with me on <a href="https://www.linkedin.com/in/iriza-kate-lorna-0a3b98251/" target="_blank">LinkedIn</a> | &copy; 2025 Kate Iriza</p>
+    <footer>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/iriza-kate-lorna-0a3b98251/" target="_blank">LinkedIn</a> | &copy; 2025 Kate Iriza</p>
   </footer>
 
   <script src="script.js"></script>
