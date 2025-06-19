@@ -1,0 +1,104 @@
+:root {
+  --primary: #000;
+  --accent: #ff69b4;
+  --bg: #fefefe;
+  --text: #333;
+  --max-width: 960px;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2em;
+  max-width: var(--max-width);
+  margin: auto;
+}
+
+section {
+  margin-bottom: 3em;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.skills-list li {
+  background: #eee;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+}
+
+input, textarea {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+button {
+  padding: 0.75em;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: var(--primary);
+  color: white;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  main {
+    padding: 1em;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+}
