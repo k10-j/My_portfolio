@@ -204,13 +204,6 @@ main {
 .educationhead{
   font-size: 2rem;
 }
-/* Google Nest Hub & Nest Hub Max (landscape & portrait) */
-@media (min-width: 1024px) and (max-width: 1280px) and (orientation: landscape), 
-  (min-width: 600px) and (max-width: 1024px) and (orientation: portrait) {
-  html, body {
-    overflow-x: hidden !important;
-  }
-}
 /* the line of education head */
 .lineedu{
   width: 60px;
@@ -632,7 +625,7 @@ footer {
     position: fixed;
     top: 7% !important;
   }
-
+  
   
   #navbar.open{
     display: flex;
@@ -785,5 +778,10 @@ footer {
   }
   #contact.section {
     padding: 0.7rem 0.2rem;
+  }
+}
+@media (max-width: 820px) {
+  html, body {
+    overflow-x: hidden !important;
   }
 }
