@@ -622,8 +622,8 @@ footer {
     gap: 0.5rem;
     background-color: black;
     color: white;
-    position: fixed;
-    top: 7% !important;
+    position: fixed !important;
+    top: 9% !important;
   }
   
   
